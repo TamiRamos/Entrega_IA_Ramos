@@ -1,115 +1,112 @@
-# Proyecto: Ambar Nails — Fast Prompting en Acción
 
-**Autora:** Ámbar Tamara Ramos  
-**Materia:** Inteligencia Artificial  
-**Trabajo Final — Segunda Entrega**
+## Proyecto: Ambar Nails — Fast Prompting en Acción
 
----
+# Autora: Ámbar Tamara Ramos
+# Materia: Inteligencia Artificial
+# Trabajo Final — Segunda Entrega
 
-## 1. Introducción
-Este proyecto se titula **Ambar Nails — Fast Prompting en Acción**.  
-El objetivo principal es mostrar cómo las técnicas de *Fast Prompting* pueden aplicarse en un caso real: la generación de contenido para una tienda online de productos de uñas.  
+## Introducción
 
-Un *prompt* es la instrucción que le damos a un modelo de inteligencia artificial para que produzca una respuesta. Según cómo se formule, los resultados pueden variar en claridad, calidad y tiempo de generación.  
+- Este proyecto se titula Ambar Nails — Fast Prompting en Acción.
+- El objetivo es mostrar cómo las técnicas de Fast Prompting pueden aplicarse a un caso real: generar contenido rápido y útil para una tienda online de productos de uñas.
 
-Con este trabajo busco demostrar cómo los prompts bien diseñados pueden ayudar a resolver un problema concreto: **crear descripciones de productos y publicaciones para redes sociales de forma rápida y manteniendo un estilo de marca**.
+## Presentación del problema
 
----
+- Crear contenido para un emprendimiento como Ambar Nails puede ser muy demandante:
 
-## 2. Presentación del problema
-El problema que enfrento en la gestión de Ambar Nails es que crear contenido demanda mucho tiempo:  
-- Descripciones de productos para la web.  
-- Publicaciones y copys para redes sociales.  
-- Respuestas rápidas a preguntas frecuentes de clientes.  
+- Descripciones de productos para la web.
 
-Hacerlo manualmente es costoso y poco eficiente. Al no producir contenido constante, la marca pierde visibilidad y oportunidades de venta.  
-Por eso, aplicar IA puede ser una solución práctica y relevante.
+- Publicaciones y tips para redes sociales.
 
----
+- Respuestas rápidas a preguntas frecuentes de clientes.
 
-## 3. Propuesta de solución
-La solución planteada es usar **modelos de lenguaje** guiados mediante *Fast Prompting*.  
+- Hacer todo manualmente consume tiempo y recursos. Sin contenido constante, la marca pierde visibilidad y oportunidades de venta. Por eso, aplicar IA con prompts optimizados es una solución práctica.
 
-Esto significa redactar **instrucciones claras, concretas y optimizadas** que permitan obtener buenas respuestas de la IA en menos tiempo y con menos prueba y error.  
 
-Por ejemplo:
-- Prompt **detallado (zero-shot):** “Eres un copywriter profesional. Escribe una descripción persuasiva y breve para este esmalte semipermanente, incluye beneficios, duración y una llamada a la acción.”  
-- Prompt **más directo (fast prompting):** “Descripción de 40-60 palabras para el esmalte Nude Elegance. Incluir beneficios: duración 3 semanas y brillo intenso. Tono elegante.”  
+## Propuesta de solución
 
-De esta forma se comparan distintas configuraciones de prompts para identificar cuál es más efectiva.
+- La solución consiste en usar modelos de lenguaje con Fast Prompting:
 
----
+- Redactar instrucciones claras, concretas y directas para obtener buenas respuestas de la IA rápido y con menos prueba y error.
 
-## 4. Objetivos
-- **Comprender** los principios de Fast Prompting y aplicarlos en un caso real.  
-- **Experimentar** con diferentes tipos de prompts (zero-shot, few-shot, fast).  
-- **Evaluar** qué configuración genera mejores resultados en calidad y rapidez.  
-- **Implementar** una prueba de concepto (POC) en un Jupyter Notebook que muestre el proceso.  
 
----
+## Ejemplos:
 
-## 5. Viabilidad del proyecto
-El proyecto es **viable** porque requiere recursos accesibles:  
-- Una computadora con Python y Jupyter Notebook.  
-- Un conjunto reducido de datos de prueba (catálogo de productos en formato CSV).  
-- Acceso a un modelo de IA como ChatGPT u otro disponible mediante API.  
+- Prompt detallado: “Eres un experto en productos de uñas. Describe de forma atractiva el esmalte ‘Nude Elegance’, incluyendo beneficios y duración.”
 
-En cuanto al tiempo, se puede completar en pocos días: preparar dataset, diseñar prompts, ejecutar pruebas y documentar resultados.
+- Prompt fast prompting: “Descripción de 40-60 palabras para ‘Nude Elegance’. Beneficios: duración 3 semanas, brillo intenso. Tono elegante.”
 
----
+- Así se puede comparar qué tipo de prompt da mejores resultados para contenido de productos y tips.
 
-## 6. Metodología
-El trabajo se desarrollará en etapas:  
-1. **Dataset:** crear un archivo simple con productos (nombre, categoría, beneficios).  
-2. **Prompts:** diseñar distintos estilos de prompts (desde los más largos hasta los más cortos y directos).  
-3. **Pruebas:** ejecutar cada tipo de prompt en el modelo y recolectar resultados.  
-4. **Evaluación:** analizar las respuestas según claridad, tono de marca, cantidad de palabras y tiempo de respuesta.  
-5. **Conclusiones:** determinar si las técnicas de Fast Prompting realmente mejoran la propuesta de solución.
 
----
+## Objetivos
 
-## 7. Herramientas y tecnologías
-- **Python 3 + Jupyter Notebook**: para organizar el código y las pruebas.  
-- **Librerías básicas:** `pandas` para manejar datos y `openai` para conectar con el modelo.  
-- **Modelo de IA**: GPT (ejemplo: `gpt-4o-mini`) o similar.  
-- **Técnicas de prompting:** zero-shot, few-shot y fast prompting.  
+- Aprender a aplicar Fast Prompting en un caso práctico.
 
----
+- Experimentar con prompts de distintos estilos.
 
-## 8. Implementación (ejemplo en Notebook)
+- Evaluar cuál genera contenido más claro, rápido y útil.
 
-```python
-import openai
-import pandas as pd
+- Documentar todo en un Jupyter Notebook como POC.
 
-openai.api_key = "TU_API_KEY"
 
-# Dataset de ejemplo
-productos = pd.DataFrame([
-    {"nombre": "Esmalte Nude Elegance", "categoria": "Esmalte", "beneficios": "Duración 3 semanas, brillo intenso"},
-    {"nombre": "Kit Semipermanente Pro", "categoria": "Kit", "beneficios": "Incluye lámpara, esmalte y top coat"}
-])
+## Viabilidad del proyecto
 
-# Prompt estilo Fast Prompting
-for _, row in productos.iterrows():
-    prompt = f"Escribe una descripción breve (40-60 palabras) para {row['nombre']}. Incluye beneficios: {row['beneficios']}. Tono elegante y cercano."
-    response = openai.ChatCompletion.create(
-        model="gpt-4o-mini",
-        messages=[{"role":"user","content":prompt}],
-        max_tokens=120
-    )
-    print(row["nombre"], "→", response["choices"][0]["message"]["content"])
-```
+- El proyecto es viable porque:
 
----
+- Solo requiere Python y Jupyter Notebook.
 
-## 9. Resultados esperados
-- Obtener descripciones de productos y publicaciones de redes sociales que sean coherentes con la identidad de la marca.  
-- Ver que los prompts más simples y claros (fast prompting) logran resultados más eficientes que los demasiado largos.  
-- Contar con plantillas de prompts listas para usar en la práctica.  
+- Se pueden usar datasets simples (ej. catálogo de productos en CSV).
 
----
+- Modelos de IA como ChatGPT son accesibles vía API.
 
-## 10. Conclusión
-Las técnicas de Fast Prompting ofrecen una forma más rápida y práctica de interactuar con la inteligencia artificial.  
-En el caso de Ambar Nails, permiten **ahorrar tiempo en la generación de contenido** y mantener un estilo de comunicación uniforme, lo que beneficia tanto a la gestión de la tienda como a la experiencia del cliente.  
+- Tiempo estimado: pocos días para preparar datos, diseñar prompts, ejecutar pruebas y documentar resultados.
+
+
+## Metodología
+
+- Dataset: crear archivo simple con productos (nombre, categoría, beneficios).
+
+- Prompts: diseñar distintos tipos de prompts (detallados, directos, fast).
+
+- Pruebas: ejecutar prompts en el modelo y guardar resultados.
+
+- Evaluación: analizar claridad, tono, longitud y utilidad de las respuestas.
+
+- Conclusiones: determinar si Fast Prompting mejora la creación de contenido.
+
+
+## Herramientas y tecnologías
+
+- Python  + Jupyter Notebook: para organizar código y pruebas.
+
+- Librerías: pandas para manejar datos, openai para IA.
+
+- Modelo de IA: GPT .
+
+- Técnicas de prompting: zero-shot, few-shot y fast prompting.
+
+
+## Resultados esperados
+
+- Generar contenido útil y claro para productos y tips.
+
+- Crear material visual coherente con la marca (tarjetas, posts).
+
+- Comprobar que Fast Prompting ahorra tiempo y produce mejores resultados que prompts genéricos.
+
+
+
+## Conclusiones
+
+- El proyecto demuestra que Fast Prompting es una herramienta útil para generar contenido de manera rápida y de calidad para negocios como Ambar Nails.
+
+- Permite crear descripciones de productos, tips y material educativo de forma eficiente.
+
+- Facilita la generación de contenido visual y textual alineado con la marca.
+
+- Reduce el tiempo y esfuerzo necesarios para mantener presencia online y visibilidad.
+
+- En resumen, aplicar técnicas de Fast Prompting mejora tanto la productividad como la consistencia del contenido en emprendimientos digitales pequeños.
+
+
